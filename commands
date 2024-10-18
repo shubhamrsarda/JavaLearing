@@ -1,0 +1,58 @@
+1)initenv
+2)git pull
+3)clean, mvn install -DskipTests
+4)drop existing schema and execute db    	                                                 db -t MySQL -ihdb ihdb123 -p 3306 -s localhost -u root
+5)build_ui
+6)run /debug
+
+
+  ssh ptdadmin@10.244.78.237   
+
+  Add our changes
+
+git reset --hard origin/development
+
+git reset --soft HEAD~1
+
+	• git add updated file names
+	• git commit -m "STI-55914 : [TS 2378361] FIXML API Clearing Instruction Publisher - Split Clearing Instruction - multi order and multi fill and multi allocation publishing"
+git push
+
+
+-----------------------------------------------------------------------------------
+Instead of cleanup
+
+dzdo docker-compose -f ih-docker-compose.yml down
+ 
+dzdo docker-compose -f docker-compose_fcd_withRSIdp.yml down
+ 
+dzdo docker container prune
+ 
+dzdo docker volume rm $(dzdo docker volume ls -qf dangling=true)
+ 
+dzdo docker system prune -f
+
+dzdo docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"
+
+  -----------------------------------------------------------------------------------
+
+
+
+  Start logs
+
+docker ps | grep node
+
+docker ps -a | grep tt
+
+copy id
+
+docker exec -it 751aa8656a21 bash
+
+cd opt
+
+cd app
+
+cd logs
+
+
+-------------------------------------------------------------------------
